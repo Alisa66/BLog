@@ -26,7 +26,6 @@ marked.setOptions({
     breaks: false,
     smartLists: true,
     smartypants: false,
-
     xhtml: false,
     highlight: function (code) {
         return hljs.highlightAuto(code).value;
@@ -40,7 +39,7 @@ const Home = (list) => {
         const promise = new Promise((resolve) => {
             axios(servicePath.getArticleList).then(
                 (res) => {
-                    console.log('远程获得的数据结果是：', res.data.data)
+                    // console.log('远程获得的数据结果是：', res.data.data)
                     resolve(res.data)
                 }
             )

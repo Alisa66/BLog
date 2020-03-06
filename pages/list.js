@@ -11,8 +11,6 @@ import Link from "next/link";
 
 
 const MyList = (list)=> {
-
-
     const [mylist, setMylist] = useState(list.data)
     useEffect(()=>{
         setMylist(list.data)

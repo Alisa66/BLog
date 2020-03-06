@@ -16,7 +16,9 @@ module.exports = appInfo => {
   config.keys = appInfo.name + '_1579072900094_7400';
 
   // add your middleware config here
-  config.middleware = [];
+
+  // 路由制作了需要在中间层去配置
+   config.middleware = ['adminauth'];
 
   // add your user config here
   const userConfig = {
@@ -47,7 +49,8 @@ module.exports = appInfo => {
   };
   config.cors = {
     origin:'http://localhost:3000',
-    credentials: true, //开启认证
+    // credentials: true, //开启认证 这样前后台能共享session
+    credentials: true,  //允许Cook可以跨域
     allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS'
   }
 
